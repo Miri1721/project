@@ -1,7 +1,7 @@
     #include "inputFileHandle.h"
 
 
-/* returns how many times a given char is appearing in a given string */
+/* returns how many times a given char appears in a given string */
 int how_many_times(char *string, char c) {
     int count = 0;
     for (; string && *string; string++) {
@@ -10,7 +10,7 @@ int how_many_times(char *string, char c) {
     return count;
 }
 
-/*returns TRUE if the string only containing letters and digits, FALSE otherwise*/
+/*returns TRUE if the string only contains letters and digits, FALSE otherwise*/
 int only_letters_digits(char *string){
     for (; *string != '\0'; string++){
         if (!isdigit(*string) && !isalpha(*string)) { return FALSE;}
@@ -69,7 +69,7 @@ int get_argument(char *line_after_op, char *store_in) {
     return TRUE;
 }
 
-/*gets a line and check whether it contains an operation or instruction. returns OPER if operation, INST if instruction. also puts the op/inst name in store_in.
+/*gets a line and checks whether it contains an operation or instruction. returns OPER if operation, INST if instruction. also puts the op/inst name in store_in.
  * return ERR if there are any errors.*/
 int get_inst_or_op(char *line, char *store_in){
     char *templine;
